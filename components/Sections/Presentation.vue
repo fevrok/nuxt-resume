@@ -7,7 +7,7 @@
 
     <h3 class="mb-4">
       <vue-typer
-        :text="basics.label"
+        :text="basics.label || 'Your Current Role'"
         :repeat="Infinity"
         :shuffle="true"
         initial-action="typing"
@@ -22,7 +22,8 @@
     </h3>
 
     <div class="subheading mb-5">
-      {{ basics.location.address }} · {{ basics.phone }} ·
+      {{ basics.location ? basics.location.address + ' · ' : '' }}
+      {{ basics.phone ? basics.phone + ' . ' : '' }}
       <a :href="'mailto:' + basics.email">{{ basics.email }}</a>
     </div>
     <p class="mb-5">

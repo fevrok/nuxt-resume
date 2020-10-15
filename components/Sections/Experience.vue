@@ -19,7 +19,7 @@
         </p>
       </div>
       <div class="resume-date text-md-right">
-        <span class="text-primary">{{ work.startDate }} - {{ work.endDate }}</span>
+        <span class="text-primary">{{ work.startDate }} - {{ work.endDate || 'present' }}</span>
       </div>
     </div>
   </div>

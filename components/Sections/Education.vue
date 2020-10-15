@@ -13,7 +13,7 @@
         <div v-for="course in edu.courses" :key="course">{{ course }}</div>
       </div>
       <div class="resume-date text-md-right">
-        <span class="text-primary">{{ edu.startDate }} - {{ edu.endDate }}</span>
+        <span class="text-primary">{{ edu.startDate }} - {{ edu.endDate || 'present' }}</span>
       </div>
     </div>
   </div>

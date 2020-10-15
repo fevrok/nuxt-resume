@@ -17,8 +17,8 @@
         <Skills />
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
-        <Interests />
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="volunteer">
+        <Volunteer />
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
@@ -38,6 +38,7 @@ import Experience from "../components/Sections/Experience";
 import Skills from "../components/Sections/Skills";
 import Interests from "../components/Sections/Interests";
 import Projects from "../components/Sections/Projects";
+import Volunteer from "../components/Sections/Volunteer";
 
 export default {
   components: {
@@ -47,7 +48,8 @@ export default {
     Education,
     Skills,
     Interests,
-    Projects
+    Projects,
+    Volunteer,
   },
   computed: {
     ... mapState({

@@ -62,9 +62,9 @@
           <li class="nav-item">
             <a
               class="nav-link js-scroll-trigger"
-              @click="jumpTo('#interests')"
+              @click="jumpTo('#volunteer')"
               href="#"
-              >{{ $t('links.interests') }}</a
+              >{{ $t('links.volunteer') }}</a
             >
           </li>
           <li class="nav-item">

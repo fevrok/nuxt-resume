@@ -158,9 +158,9 @@ body {
 
   :root {
     --color: #868e96;
-    --color-primary: #478547;
-    --color-secondary: #3b833b;
-    --color-primary-hover: #276827;
+    --color-primary: #00a8ff;
+    --color-secondary: #048fd4;
+    --color-primary-hover: #33b9ff;
     --color-text-primary: #343a40;
     --color-text-secondary: #e2e2e2; 
     --color-text-third: #343a40;
@@ -172,9 +172,9 @@ body {
   .dark-mode {
     
     --color: #ebf4f1;
-    --color-primary: #0a0d0f;
-    --color-secondary: #000000;
-    --color-primary-hover: #020405;
+    --color-primary: #088aca;
+    --color-secondary: #048fd4;
+    --color-primary-hover: #0d76aa;
     --color-text-primary: #ffffff;
     --color-text-secondary: #e2e2e2; 
     --bg: #081927;

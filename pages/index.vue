@@ -54,14 +54,6 @@
           <li class="nav-item">
             <a
               class="nav-link js-scroll-trigger"
-              @click="jumpTo('#skills')"
-              href="#"
-              >{{ $t('links.skills') }}</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
               @click="jumpTo('#volunteer')"
               href="#"
               >{{ $t('links.volunteer') }}</a
@@ -86,9 +78,9 @@
           <li class="nav-item">
             <a
               class="nav-link js-scroll-trigger"
-              @click="jumpTo('#projects')"
+              @click="jumpTo('#skills')"
               href="#"
-              >{{ $t('links.projects') }}</a
+              >{{ $t('links.skills') }}</a
             >
           </li>
           <li class="nav-item">
@@ -129,7 +121,7 @@ export default {
   },
   head() {
     return {
-      title: "Iván Greve"
+      title: this.basics.name
     };
   },
   computed: {

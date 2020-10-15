@@ -13,10 +13,6 @@
         <Experience />
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
-        <Skills />
-      </section>
-
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="volunteer">
         <Volunteer />
       </section>
@@ -29,8 +25,8 @@
         <Awards />
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
-        <Projects />
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <Skills />
       </section>
     </div>
   </section>
@@ -39,27 +35,23 @@
 <script>
 import jump from "jump.js";
 import { mapState } from 'vuex'
-// import Logo from "../components/Logo.vue";
-import Presentation from "../components/Sections/Presentation";
-import Education from "../components/Sections/Education";
-import Experience from "../components/Sections/Experience";
 import Skills from "../components/Sections/Skills";
-import Publications from "../components/Sections/Publications";
-import Projects from "../components/Sections/Projects";
-import Volunteer from "../components/Sections/Volunteer";
 import Awards from "../components/Sections/Awards";
+import Education from "../components/Sections/Education";
+import Volunteer from "../components/Sections/Volunteer";
+import Experience from "../components/Sections/Experience";
+import Presentation from "../components/Sections/Presentation";
+import Publications from "../components/Sections/Publications";
 
 export default {
   components: {
-    // Logo,
-    Presentation,
-    Experience,
-    Education,
     Skills,
-    Publications,
-    Projects,
-    Volunteer,
     Awards,
+    Education,
+    Volunteer,
+    Experience,
+    Presentation,
+    Publications,
   },
   computed: {
     ... mapState({

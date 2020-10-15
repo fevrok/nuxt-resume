@@ -70,6 +70,22 @@
           <li class="nav-item">
             <a
               class="nav-link js-scroll-trigger"
+              @click="jumpTo('#publications')"
+              href="#"
+              >{{ $t('links.publications') }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link js-scroll-trigger"
+              @click="jumpTo('#awards')"
+              href="#"
+              >{{ $t('links.awards') }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link js-scroll-trigger"
               @click="jumpTo('#projects')"
               href="#"
               >{{ $t('links.projects') }}</a

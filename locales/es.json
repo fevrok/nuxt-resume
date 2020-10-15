@@ -1,4 +1,7 @@
 {
+	"awards": {
+		"title": "Premios"
+	},
 	"educationDegrees": {
 		"degrees": [
 			{
@@ -35,10 +38,12 @@
 	},
 	"links": {
 		"about": "Sobre mi",
+		"awards": "Premios",
 		"education": "Educación",
 		"experience": "Experiencia",
 		"interests": "Intereses",
 		"projects": "Proyectos",
+		"publications": "Publicaciones",
 		"skills": "Habilidades",
 		"volunteer": "Experiencia como voluntario"
 	},
@@ -85,6 +90,9 @@
 			}
 		],
 		"title": "Proyectos Personales 🦾🧠"
+	},
+	"publications": {
+		"title": "Publicaciones"
 	},
 	"skills": {
 		"devIcons": [

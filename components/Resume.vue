@@ -21,6 +21,14 @@
         <Volunteer />
       </section>
 
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="publications">
+        <Publications />
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+        <Awards />
+      </section>
+
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
         <Projects />
       </section>
@@ -31,25 +39,27 @@
 <script>
 import jump from "jump.js";
 import { mapState } from 'vuex'
-import Logo from "../components/Logo.vue";
+// import Logo from "../components/Logo.vue";
 import Presentation from "../components/Sections/Presentation";
 import Education from "../components/Sections/Education";
 import Experience from "../components/Sections/Experience";
 import Skills from "../components/Sections/Skills";
-import Interests from "../components/Sections/Interests";
+import Publications from "../components/Sections/Publications";
 import Projects from "../components/Sections/Projects";
 import Volunteer from "../components/Sections/Volunteer";
+import Awards from "../components/Sections/Awards";
 
 export default {
   components: {
-    Logo,
+    // Logo,
     Presentation,
     Experience,
     Education,
     Skills,
-    Interests,
+    Publications,
     Projects,
     Volunteer,
+    Awards,
   },
   computed: {
     ... mapState({

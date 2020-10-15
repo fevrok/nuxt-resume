@@ -9,12 +9,12 @@ export const mutations = {
 }
 
 export const actions = {
-    async nuxtServerInit ({ dispatch, commit }, { store, app }) {
+    async nuxtServerInit ({ dispatch, commit }, { env }) {
         let resume = await fetch(
-            'https://www.fevrok.com/api/v1/resume/chadidi',
+            'https://www.fevrok.com/api/v1/resume/' + env.Username,
             {
                 headers: {
-                'X-API-Key': 'Vpu0RmRSTqHDPLVSpH4xEaonxeY0IgAGx1D9WEvg'
+                'X-API-Key': env.ApiKey
                 }
             }
         ).then(res => res.json())

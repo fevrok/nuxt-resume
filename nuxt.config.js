@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -149,6 +151,10 @@ export default {
         // console.log(util.inspect(config.module.rules, { depth: 6 }))
       }
     }
-  }
+  },
+  env: {
+		ApiKey: process.env.FEVROK_API_KEY,
+		Username: process.env.FEVROK_USERNAME
+	},
 };
 

@@ -1,5 +1,5 @@
 export const state = () => ({
-    resume: null
+    resume: null,
 })
 
 export const mutations = {
@@ -9,15 +9,19 @@ export const mutations = {
 }
 
 export const actions = {
-    async nuxtServerInit ({ dispatch, commit }, { env }) {
+    async nuxtServerInit ({ commit }, { app, env }) {
         let resume = await fetch(
-            'https://www.fevrok.com/api/v1/resume/' + env.Username,
+            'http://fevrok.me/api/v1/portfolio/' + env.Username + '?locale=' + app.i18n.locale,
             {
                 headers: {
-                'X-API-Key': env.ApiKey
+                    'X-API-Key': env.ApiKey
                 }
             }
         ).then(res => res.json())
+        .catch ((e) => {
+            console.log(e)
+        })
+        // console.log(resume)
         commit('SET_RESUME', resume)
     }
 }

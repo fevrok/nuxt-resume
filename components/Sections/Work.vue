@@ -1,6 +1,6 @@
 <template>
   <div class="my-auto">
-    <h2 class="mb-5">{{ $t('workExperiences.title') }}</h2>
+    <h2 class="mb-5">{{ $t('work') }}</h2>
 
     <div
       v-for="(work, index) in workExperiences"
@@ -19,7 +19,7 @@
         </p>
       </div>
       <div class="resume-date text-md-right">
-        <span class="text-primary">{{ work.startDate }} - {{ work.endDate || 'present' }}</span>
+        <span class="text-primary">{{ work.startDate }} - {{ work.endDate || $t('present') }}</span>
       </div>
     </div>
   </div>

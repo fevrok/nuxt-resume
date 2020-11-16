@@ -5,7 +5,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: "universal",
+  ssr: true,
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -91,12 +91,16 @@ export default {
    */
   plugins: [
     { src: "~plugins/swiper.js", ssr: false },
-    { src: "~/plugins/vueTyper.js", ssr: false }
+    { src: "~/plugins/vueTyper.js", ssr: false },
+    { src: '~/plugins/i18n.js' }
   ],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/style-resources", "@nuxtjs/color-mode"],
+  buildModules: [
+    "@nuxtjs/style-resources",
+    "@nuxtjs/color-mode",
+  ],
   styleResources: {
     // your settings here
     scss: ["'./assets/scss/*.scss'", "./assets/scss/resume.scss"]
@@ -114,17 +118,11 @@ export default {
 
     ["@nuxtjs/style-resources"]
   ],
-  i18n: {
-    locales: ["en", "es"],
-    defaultLocale: "en",
-    vueI18n: {
-      fallbackLocale: "en",
-      messages: {
-        en: require("./locales/en.json"),
-        es: require("./locales/es.json")
-      }
-    }
-  },
+  /*
+	 ** i18n
+	 */
+  i18n: require("./locales"),
+
   loading: { color: "#3B8070" },
   /*
    ** Build configuration

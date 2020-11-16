@@ -1,6 +1,6 @@
 <template>
   <div class="my-auto">
-    <h2 class="mb-5">{{ $t('interests.title') }}</h2>
+    <h2 class="mb-5">{{ $t('interests') }}</h2>
     <p>
       {{ $t('interests.firstBlock') }}
     </p>

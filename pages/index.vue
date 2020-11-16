@@ -5,7 +5,7 @@
       id="sideNav"
     >
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">{{ basics.name }}</span>
+        <span class="d-block d-lg-none">{{ basics.name || 'John Doe' }}</span>
         <span class="d-none d-lg-block">
           <img
             class="img-fluid img-profile rounded-circle mx-auto mb-2"
@@ -27,62 +27,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" v-if="resume.hasOwnProperty('basics')">
             <a
               class="nav-link js-scroll-trigger"
               @click="jumpTo('#about')"
               href="#"
-              >{{ $t('links.about') }}</a
+              >{{ $t('about') }}</a
             >
           </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              @click="jumpTo('#education')"
-              href="#"
-              >{{ $t('links.education') }}</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              @click="jumpTo('#experience')"
-              href="#"
-              >{{ $t('links.experience') }}</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              @click="jumpTo('#volunteer')"
-              href="#"
-              >{{ $t('links.volunteer') }}</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              @click="jumpTo('#publications')"
-              href="#"
-              >{{ $t('links.publications') }}</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              @click="jumpTo('#awards')"
-              href="#"
-              >{{ $t('links.awards') }}</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link js-scroll-trigger"
-              @click="jumpTo('#skills')"
-              href="#"
-              >{{ $t('links.skills') }}</a
-            >
-          </li>
+          <template v-for="(data, index) in resume">
+            <li class="nav-item" v-bind:key="index" v-if="index != 'basics' && data.length">
+              <a
+                class="nav-link js-scroll-trigger"
+                @click="jumpTo('#' + index)"
+                href="#"
+                >{{ $t(index) }}</a
+              >
+            </li>
+          </template>
           <li class="nav-item">
             <div style="position:fixed; bottom:10px; left:10px; z-index:1000;">
               <DarkModeBtn />
@@ -93,8 +55,11 @@
               <nuxt-link class="btn btn-light" :to="switchLocalePath('en')"
                 >EN</nuxt-link
               >
-              <nuxt-link class="btn btn-light" :to="switchLocalePath('es')"
-                >ES</nuxt-link
+              <nuxt-link class="btn btn-light" :to="switchLocalePath('ar')"
+                >AR</nuxt-link
+              >
+              <nuxt-link class="btn btn-light" :to="switchLocalePath('fr')"
+                >FR</nuxt-link
               >
             </div>
           </li>
@@ -103,35 +68,68 @@
     </nav>
 
     <div class="resume">
-      <Resume />
+      <section id="page-top">
+        <div class="container-fluid p-0">
+          <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+            <Presentation />
+          </section>
+
+          <template v-for="(data, index) in resume">
+            <section :key="index" v-if="index != 'basics' && data.length" class="resume-section p-3 p-lg-5 d-flex flex-column" :id="index">
+              <component :is="capitalize(index)" />
+            </section>
+          </template>
+        </div>
+      </section>
     </div>
   </section>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import Resume from "@/components/Resume";
 import DarkModeBtn from "@/components/DarkModeBtn";
 import jump from "jump.js";
+import Skills from "../components/Sections/Skills";
+import Awards from "../components/Sections/Awards";
+import Education from "../components/Sections/Education";
+import Volunteer from "../components/Sections/Volunteer";
+import Work from "../components/Sections/Work";
+import Presentation from "../components/Sections/Presentation";
+import Publications from "../components/Sections/Publications";
+import Projects from "../components/Sections/Projects";
+import Interests from "../components/Sections/Interests";
 
 export default {
   components: {
-    Resume,
-    DarkModeBtn
+    DarkModeBtn,
+    Skills,
+    Awards,
+    Education,
+    Volunteer,
+    Work,
+    Presentation,
+    Interests,
+    Projects,
+    Publications,
   },
   head() {
     return {
-      title: this.basics.name
+      title: this.basics?.name ?? 'John Doe'
     };
   },
   computed: {
     ... mapState({
-      basics: state => state.resume.basics
+      resume: state => state.resume ?? {},
+      basics: state => state.resume?.basics ?? {},
     }),
   },
   methods: {
     jumpTo(element) {
       jump(element);
+    },
+    capitalize(s) {
+      if (typeof s !== 'string') return ''
+      return s.charAt(0).toUpperCase() + s.slice(1)
     }
   }
 };

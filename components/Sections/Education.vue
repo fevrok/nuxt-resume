@@ -1,6 +1,6 @@
 <template>
   <div class="my-auto">
-    <h2 class="mb-5">{{ $t("educationDegrees.title") }}</h2>
+    <h2 class="mb-5">{{ $t("education") }}</h2>
 
     <div
       v-for="(edu, index) in education"
@@ -13,7 +13,7 @@
         <div v-for="course in edu.courses" :key="course">{{ course }}</div>
       </div>
       <div class="resume-date text-md-right">
-        <span class="text-primary">{{ edu.startDate }} - {{ edu.endDate || 'present' }}</span>
+        <span class="text-primary">{{ edu.startDate }} - {{ edu.endDate || $t('present') }}</span>
       </div>
     </div>
   </div>

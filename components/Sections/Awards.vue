@@ -1,6 +1,6 @@
 <template>
   <div class="my-auto">
-    <h2 class="mb-5">{{ $t('awards.title') }}</h2>
+    <h2 class="mb-5">{{ $t('awards') }}</h2>
 
     <div
       v-for="(award, index) in awards"

@@ -34,6 +34,15 @@
 
 <script>
 export default {
-  props:["name", "lastName"]
+  props: {
+    name: {
+      default: 'John',
+      type: String
+    },
+    lastName: {
+      default: 'Doe',
+      type: String
+    }
+  }
 }
 </script>

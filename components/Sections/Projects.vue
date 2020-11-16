@@ -1,8 +1,8 @@
 <template>
   <div class="my-auto">
-    <h2 class="mb-5">{{ $t('projects.title') }}</h2>
+    <h2 class="mb-5">{{ $t('projects') }}</h2>
 
-    <CardProject :projectInfo="project" v-for="project in $t('projects.projectsInfo')" :key="project.name" class="mb-5"/>
+    <CardProject :projectInfo="project" v-for="project in []" :key="project.name" class="mb-5"/>
   </div>
 </template>
 

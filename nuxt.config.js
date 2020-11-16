@@ -152,6 +152,7 @@ export default {
   },
   env: {
 		ApiKey: process.env.FEVROK_API_KEY,
+		ApiEndpoint: (process.env.API_ENDPOINT || 'https://www.fevrok.com/api/v1') + '/portfolio',
 		Username: process.env.FEVROK_USERNAME
 	},
 };

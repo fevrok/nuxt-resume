@@ -11,7 +11,7 @@ export const mutations = {
 export const actions = {
     async nuxtServerInit ({ commit }, { app, env }) {
         let resume = await fetch(
-            'http://fevrok.me/api/v1/portfolio/' + env.Username + '?locale=' + app.i18n.locale,
+            env.ApiEndpoint + '/' + env.Username + '?locale=' + app.i18n.locale,
             {
                 headers: {
                     'X-API-Key': env.ApiKey
